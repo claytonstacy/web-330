@@ -1,0 +1,43 @@
+<!---
+============================================
+Title: Assignment 4.3
+Author: Professor Krasso
+Date: 14 March 2020
+Modified By: Clayton Stacy
+Description: PUT and DELETE Operations
+===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>4.3 PUT and DELETE Operations</title>
+
+    <!-- jQuery reference -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <h4>
+          <button id="delete">Delete</button>
+      </h4>
+    <script>
+      $('#delete').click(function() {
+          $.ajax({
+              url: 'http://httpbin.org/delete',
+              dataType: 'json',
+              type: 'DELETE',
+              data: {username: 'cstacy', password: 'password', server: 'server1'},
+              success: function(data, status) {
+                console.log(`Successfully deleted ${JSON.stringify(data.form.username)}`)
+              }
+          })
+      });
+    </script>
+  </body>
+</html>
