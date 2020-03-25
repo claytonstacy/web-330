@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#element").on("click.handler", function(){
+        alert("Foo");
+    });
+    $("#element").on("click.another_handler", function(){
+        alert("Bar");
+    });
+    $("#element").off("click.another_handler");
+});
+</script>
+</head>
+<body>
+
+  <p id="element">Click me!</p>
+
+</body>
+</html>
